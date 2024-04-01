@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>Display Data</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <div class="Intro-text">
+        <h2>The first table is sorted by Street Name and Number; the second table is sorted by First Name.<br>Please select which table you would like to see:</h2>
+    </div>
+
+    <!-- Button to scroll to the first table -->
+    <div class="button-container">
+        <a href="#first-table" class="scroll-button">Go to First Table</a>
+    </div>
+
+    <!-- Button to scroll to the second table -->
+    <div class="button-container">
+        <a href="#second-table" class="scroll-button">Go to Second Table</a>
+    </div>
+
+    <div id="first-table" class="table-container">
+        <div class="header-container">
+            <h1 class="header">Records Sorted by Street Name and Number</h1>
+        </div>
+        <table class="borderless">
+            <tr>
+                <th>STREET</th>
+                <th>NUMBER</th>
+                <th>PIN</th>
+                <th>OWNER</th>
+                <th>MARKET VALUE</th>
+                <th>SALE DATE</th>
+                <th>SALE PRICE</th>
+                <th>LINK</th>
+                <th>GOOGLE MAPS</th>
+            </tr>
+            {% for index, row in new_data.iterrows() %}
+            <tr>
+                <td>{{ row['Street'] }}</td>
+                <td>{{ row['Number'] }}</td>
+                <td>{{ row['PIN'] }}</td>
+                <td>{{ row['OWNER'] }}</td>
+                <td>{{ row['MARKET_VALUE'] }}</td>
+                <td>{{ row['SALE_DATE'] }}</td>
+                <td>{{ row['SALE_PRICE'] }}</td>
+                <td>{{ row['LINK'] }}</td>
+                <td><a href="https://www.google.com/maps/search/{{ row['Street'] }},+{{ row['Number'] }},+Mazama,+WA" target="_blank">View</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
+    <!-- Second table -->
+    <div id="second-table" class="table-container">
+        <div class="header-container">
+            <h1 class="header">Records Sorted by First Name</h1>
+        </div>
+        <table class="borderless">
+            <tr>
+                <th>FIRST NAME</th>
+                <th>PIN</th>
+                <th>ADDRESS</th>
+                <th>MARKET VALUE</th>
+                <th>SALE DATE</th>
+                <th>SALE PRICE</th>
+                <th>LINK</th>
+                <th>GOOGLE MAPS</th>
+            </tr>
+            {% for index, row in second_data.iterrows() %}
+            <tr>
+                <td>{{ row['First Name'] }}</td>
+                <td>{{ row['PIN'] }}</td>
+                <td>{{ row['ADDRESS'] }}</td>
+                <td>{{ row['MARKET_VALUE'] }}</td>
+                <td>{{ row['SALE_DATE'] }}</td>
+                <td>{{ row['SALE_PRICE'] }}</td>
+                <td>{{ row['LINK'] }}</td>
+                <td><a href="https://www.google.com/maps/search/{{ row['ADDRESS'] }},+Mazama,+WA" target="_blank">View</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <!-- Button to scroll to the top of the page -->
+    <div class="top-button-container">
+        <a href="#" class="top-button">Back to Top</a>
+    </div>
+</body>
+</html>

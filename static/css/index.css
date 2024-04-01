@@ -1,0 +1,106 @@
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5%;
+    margin-top: 40%;
+}
+
+/* Apply styles directly to the header class */
+.header {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* Apply styles to the entire table */
+table.borderless {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 5%;
+}
+
+/* Apply styles to table headers */
+table.borderless th {
+    background-color: #82977e; 
+    padding: 8px;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600; 
+    font-style: normal; 
+    font-size: 18px;
+    color: white;
+}
+
+/* Apply styles to table cells */
+table.borderless td {
+    padding: 5px;
+    text-align: left;
+    font-family: "Merriweather", serif;
+    font-weight: 300; 
+    font-style: normal; 
+    font-size: 13px;
+}
+
+/* Apply alternating row colors */
+table.borderless tr:nth-child(even) {
+    background-color: #d6d6d6;
+}
+
+.Intro-text h2{
+    padding-top: 20px;
+    padding-bottom: 10%;
+    text-align: center;
+    font-family: "Merriweather", serif; 
+    font-weight: 300;
+    font-style: normal;
+    font-size: 15px;
+}
+
+/* Style for scroll buttons */
+.button-container {
+    text-align: center;
+    margin-top: 3%;
+}
+
+.scroll-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #777696;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.scroll-button:hover {
+    background-color: #B39EB5;
+}
+
+/* Style for top button */
+.top-button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.top-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.top-button:hover {
+    background-color: #0073e6;
+}
